@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio de Nantenaina</title>
+  <title>Mon Portfolio</title>
   <style>
     * {
       margin: 0;
@@ -13,41 +13,30 @@
     }
     body {
       font-family: Arial, sans-serif;
-      background: #121212;
+      background: #000;
       color: #fff;
-      overflow-x: hidden;
+      overflow: hidden;
     }
-    header {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 10;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px 20px;
-      border-radius: 8px;
-    }
-    header h1 {
-      font-size: 28px;
-      color: #00ffff;
-    }
-    .overlay-text {
+    .intro-text {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px 50px;
+      border-radius: 12px;
       text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 30px;
-      border-radius: 10px;
+      animation: fadeOut 1s ease 4s forwards;
     }
-    .overlay-text h2 {
-      font-size: 36px;
+    .intro-text h2 {
+      font-size: 30px;
       margin-bottom: 10px;
+      color: #00ffff;
     }
-    .overlay-text p {
-      font-size: 18px;
-      color: #ddd;
+    .intro-text p {
+      font-size: 16px;
+      color: #eee;
     }
     video {
       position: fixed;
@@ -58,22 +47,25 @@
       object-fit: cover;
       z-index: 0;
     }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Portfolio de Nantenaina</h1>
-  </header>
 
-  <div class="overlay-text">
-    <h2>Bienvenue sur mon site</h2>
-    <p>Je suis un professionnel de la relation client bilingue avec plus de 7 ans d'expérience, 
-    spécialisé en qualité, support administratif et suivi opérationnel. Découvrez ma vidéo de présentation !</p>
+  <div class="intro-text">
+    <h2>Bienvenue</h2>
+    <p>Chargement de votre vidéo...</p>
   </div>
 
-  <video autoplay muted loop>
+  <video autoplay controls loop>
     <source src="Portfolio Nantenaina.mp4.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la lecture de vidéos.
+    Votre navigateur ne prend pas en charge la vidéo HTML5.
   </video>
+
 </body>
 </html>
