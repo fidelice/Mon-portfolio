@@ -47,6 +47,22 @@
       object-fit: cover;
       z-index: 0;
     }
+    .cv-button {
+      display: none;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    .cv-button a {
+      background-color: #00ffff;
+      color: #000;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
     @keyframes fadeOut {
       to {
         opacity: 0;
@@ -62,10 +78,22 @@
     <p>Chargement de votre vidéo...</p>
   </div>
 
-  <video autoplay controls loop>
+  <video id="portfolioVideo" autoplay controls>
     <source src="Portfolio Nantenaina.mp4.mp4" type="video/mp4">
     Votre navigateur ne prend pas en charge la vidéo HTML5.
   </video>
+
+  <div class="cv-button" id="cvBtn">
+    <a href="CV-Nantenaina.pdf" download>Télécharger mon CV</a>
+  </div>
+
+  <script>
+    const video = document.getElementById('portfolioVideo');
+    const cvBtn = document.getElementById('cvBtn');
+    video.addEventListener('ended', () => {
+      cvBtn.style.display = 'block';
+    });
+  </script>
 
 </body>
 </html>
